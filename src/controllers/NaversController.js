@@ -1,7 +1,5 @@
 const Naver = require('../models/NaversModel');
-const Project = require('../models/ProjectsModel');
-const ProjectsNavers = require('../models/ProjectsNaversModel');
-
+const ProjectNaversRepository = require('../repository/ProjectsNaversRepository');
 module.exports = {
     async index(req, res) {
         try {
@@ -19,7 +17,6 @@ module.exports = {
             if(!naver) return res.status(200).json({error: 'Nenhum naver encontrado'});
             return res.status(200).json({naver});
         } catch (error) {
-            console.log(error);
             return res.status(400).json({error: error.message})
         }
     },
@@ -34,20 +31,8 @@ module.exports = {
                 job_role
             });
 
-            if(projects && projects.length > 0) {
-                projects.forEach(async project =>{
-                    const projectFind = await Project.query().findById(Number(project));
-                    console.log(projectFind);
-                    if(projectFind) {
-                        await ProjectsNavers.query().insert({
-                            project_id: projectFind.id,
-                            naver_id: naver.id
-                        });
-                    }
-                });
-            }
-
-            return res.status(201).json({naver});
+            const errors = await ProjectNaversRepository.registerFromNavers(projects, naver.id);
+            return errors.length > 0 ? res.status(201).json({naver, alerta: errors}) : res.status(201).json({naver});
         } catch (error) {
             return res.status(401).json({error: error.message});
         }

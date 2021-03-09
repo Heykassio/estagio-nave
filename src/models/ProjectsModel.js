@@ -1,6 +1,5 @@
 const { Model } = require('objection');
 const knex = require('../database');
-const Naver = require('./NaversModel');
 Model.knex(knex);
 
 class Project extends Model {
@@ -11,7 +10,7 @@ class Project extends Model {
     static relationMappings = {
         navers: {
             relation: Model.ManyToManyRelation,
-            modelClass: Naver,
+            modelClass: __dirname + '/NaversModel',
             join: {
                 from: 'projects.id',
                 through: {
@@ -21,6 +20,10 @@ class Project extends Model {
                 to: 'navers.id'
             }
         }
+    }
+
+    static async getProject(id) {
+        return await this.query().withGraphFetched("navers").findById(id);
     }
 }
 
