@@ -3,8 +3,19 @@ const Naver = require('../models/NaversModel');
 const ProjectsNavers = require('../models/ProjectsNaversModel');
 
 module.exports = {
+
+    async register(data) {
+        const {naverId, projectId } = data;
+        const project_naver = await ProjectsNavers.query().insert({
+            project_id: projectId,
+            naver_id: naverId
+        });
+
+        return project_naver;
+    },
+
     async registerFromNavers(arrayProjects, naverId){
-        const errors = []
+        const errors = ['Naver cadastrado com sucesso.']
         if(arrayProjects && arrayProjects.length > 0) {
             for (const project of arrayProjects){
                 const projectFind = await Project.query().findById(project);
@@ -23,7 +34,7 @@ module.exports = {
     },
 
     async registerFromProjects(arrayNavers, projectId){
-        const errors = []
+        const errors = ['Projeto criado com sucesso.']
         if(arrayNavers && arrayNavers.length > 0) {
             for (const naver of arrayNavers){
                 const naverFind = await Naver.query().findById(naver);

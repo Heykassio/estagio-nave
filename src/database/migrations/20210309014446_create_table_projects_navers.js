@@ -4,7 +4,7 @@ exports.up = function(knex) {
         table.increments('id').primary();
         table.integer('project_id').unsigned().notNullable();
         table.integer('naver_id').unsigned().notNullable();
-
+        table.unique(['project_id', 'naver_id']);
         table.foreign('project_id').references('id').inTable('projects');
         table.foreign('naver_id').references('id').inTable('navers');
     });
