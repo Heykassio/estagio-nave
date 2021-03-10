@@ -77,6 +77,7 @@ substitua o *name* e *password* pelas credenciais de sua escolha.
         npx knex seed:run
 
 * Inicie a api:
+
         npm start
 
 
@@ -84,8 +85,11 @@ substitua o *name* e *password* pelas credenciais de sua escolha.
 
 ### Navers:
 GET `/navers` (lista todos os navers).
+
 GET `/navers/:id` (lista um naver pelo id).
+
 POST `/navers`   cadastra um naver, espera um JSON contendo:
+
         {
             "name": String, 
             "birthdate":DATE(YYYY-MM-DD),
@@ -97,8 +101,11 @@ POST `/navers`   cadastra um naver, espera um JSON contendo:
 
 ### Projects:
 GET `/projects` (lista todos os projetos).
+
 GET `/projects/:id` (lista um projeto pelo id).
+
 POST `/projects` cadastra um projeto, espera um JSON contendo:
+
         {
             "name": String,
             "navers": Array de Números //id de navers já cadastrados.
@@ -107,6 +114,7 @@ POST `/projects` cadastra um projeto, espera um JSON contendo:
 
 ### Projects-navers:
 POST `/project-naver` associa um naver já existente com um projeto já existente, espera um JSON contendo:
+
         {
             naverId: Integer, //id de naver já cadastrado.
             projectId: Integer //id de projeto já cadastrado.
