@@ -27,7 +27,7 @@ substitua o *name* e *password* pelas credenciais de sua escolha.
 
 * Criar uma Database: 
 
-    CREATE DATABASE nave
+        CREATE DATABASE nave
 
 ### Instalação das dependências:
 
@@ -35,31 +35,31 @@ substitua o *name* e *password* pelas credenciais de sua escolha.
 * Caso não tenha, instale o [Git](https://git-scm.com/downloads).
 * Use o comando:
 
-    git clone https://github.com/Heykassio/estagio-nave.git
+        git clone https://github.com/Heykassio/estagio-nave.git
 
 * Navegue até a pasta 'estagio-nave'.
 * Altere o arquivo config.js com suas credenciais do banco de dados:
 
-    //host do postgresql
+        //host do postgresql
 
-    export const dbHost = '';
+        export const dbHost = '';
 
-    //porta do postgresql
+        //porta do postgresql
 
-    export const dbPort = '';
+        export const dbPort = '';
 
-    //usuário criado anteriormente
+        //usuário criado anteriormente
 
-    export const dbUser = '';
+        export const dbUser = '';
 
-    //password criada anteriormente
+        //password criada anteriormente
 
-    export const dbPassword = '';
+        export const dbPassword = '';
 
 
 * Use o comando:
 
-    npm install
+        npm install
 
 ### Iniciando a API:
 
