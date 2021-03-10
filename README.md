@@ -10,6 +10,10 @@ Api desenvolvida para o desafio da vaga de estágio de backend da Nave.rs
 
 [link para api em produção](https://nave.heykassio.com/).
 
+### Insomnia com api em produção
+
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=Nave%20API&uri=https%3A%2F%2Fraw.githubusercontent.com%2FHeykassio%2Festagio-nave%2Fmain%2FInsomnia-production.json)
+
 ### Tecnologias usadas:
 * Node.JS
 * Express
