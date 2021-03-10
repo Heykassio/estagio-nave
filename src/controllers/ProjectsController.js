@@ -1,6 +1,6 @@
 const ProjectRepository = require('../repositories/ProjectsRepository');
 const ProjectsNaversRepository = require('../repositories/ProjectsNaversRepository');
-
+const { formatDate } = require('../../utils');
 module.exports = {
     async index(req, res) {
         try {
@@ -15,6 +15,10 @@ module.exports = {
         const { id } = req.params;
         try {
             const project = await ProjectRepository.getOne(id);
+            project.navers.map(naver =>{
+                naver.birthdate = formatDate(naver.birthdate);
+                naver.admission_date = formatDate(naver.admission_date);
+            });
             if(!project) return res.status(200).json({error: 'Nenhum projeto encontrado'});
             return res.status(200).json({project});
         } catch (error) {
