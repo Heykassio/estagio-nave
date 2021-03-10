@@ -8,6 +8,8 @@
 ## API Rest
 Api desenvolvida para o desafio da vaga de estágio de backend da Nave.rs
 
+[link para api em produção](https://nave.heykassio.com/).
+
 ### Tecnologias usadas:
 * Node.JS
 * Express
