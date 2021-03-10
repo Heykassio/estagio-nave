@@ -1,9 +1,9 @@
 module.exports = {//host do postgresql
-dbHost = '',
+dbHost: '',
 //porta do postgresql
-dbPort = '',
+dbPort : '',
 //usuário criado anteriormente
-dbUser = '',
+dbUser : '',
 //password criada anteriormente
-dbPassword = ''
+dbPassword : ''
 }
