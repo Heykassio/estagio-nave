@@ -100,7 +100,7 @@ POST `/project-naver` associa um naver já existente com um projeto já existent
         naverId: Integer, //id de naver já cadastrado.
         projectId: Integer //id de projeto já cadastrado.
     }
-
+    
 A api pode cadastrar navers sem estar relacionados com um projeto e também um projeto sem estar associado com navers. Eles podem ser associados depois usando o endpoint de projects-navers.
 
 ## Usando o Insomnia:
