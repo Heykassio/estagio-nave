@@ -1,13 +1,14 @@
 // Update with your config settings.
+const config = require('./config');
 
 module.exports = {
   client: 'pg',
   connection: {
-    host: 'localhost',
-    port: '5432',
+    host: config.dbHost,
+    port: config.port,
     database: 'nave',
-    user: 'postgres',
-    password: '061914'
+    user: config.dbUser,
+    password: config.dbPassword
   },
   pool: {
     min: 2,
