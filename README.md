@@ -21,7 +21,8 @@ Api desenvolvida para o desafio da vaga de estágio de backend da Nave.rs
 * Instalar o [postgreSQL](https://www.postgresql.org/download/).
 * Criar um usuário:
 
-    //substitua o name e password pelas credenciais de sua escolha.
+substitua o *name* e *password* pelas credenciais de sua escolha. 
+
     CREATE USER name WITH PASSWORD password
 
 * Criar uma Database: 
@@ -33,20 +34,31 @@ Api desenvolvida para o desafio da vaga de estágio de backend da Nave.rs
 * Caso não tenha, Instale o [Node.JS](https://nodejs.org/en/download/).
 * Caso não tenha, instale o [Git](https://git-scm.com/downloads).
 * Use o comando:
+
     git clone https://github.com/Heykassio/estagio-nave.git
 
 * Navegue até a pasta 'estagio-nave'.
 * Altere o arquivo config.js com suas credenciais do banco de dados:
+
     //host do postgresql
+
     export const dbHost = '';
+
     //porta do postgresql
+
     export const dbPort = '';
+
     //usuário criado anteriormente
+
     export const dbUser = '';
+
     //password criada anteriormente
+
     export const dbPassword = '';
 
+
 * Use o comando:
+
     npm install
 
 ### Iniciando a API:
@@ -100,7 +112,7 @@ POST `/project-naver` associa um naver já existente com um projeto já existent
         naverId: Integer, //id de naver já cadastrado.
         projectId: Integer //id de projeto já cadastrado.
     }
-    
+
 A api pode cadastrar navers sem estar relacionados com um projeto e também um projeto sem estar associado com navers. Eles podem ser associados depois usando o endpoint de projects-navers.
 
 ## Usando o Insomnia:
